@@ -1,8 +1,12 @@
-# JANGO
-A personal assistant developed in python.
+# Crawler-geeks
+A crawler developed to crawl http://www.geeksforgeeks.org/ interview section.
+It basically crawls every single page of this website and prints the title and link of only those articles that you want.
 
-Requirements -> BeautifulSoup,requests,festival,wikipedia
+# Example
 
-To start the program above packages must be installed on your PC and run the jango-start.py.
+from gcrawler import gcrawler
+gcrawler.gcrawl('amazon')
 
-The project is still under development and there might be some bugs too.Any contribution is invited.
+# Requirements
+
+BeautifulSoup and requests
