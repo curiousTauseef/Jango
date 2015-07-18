@@ -1,6 +1,6 @@
 import ConfigParser
 import os
-from modules import jangopath, start, conversation, brain
+from modules import jangopath, start, conversation, brain, internet
 
 os.system('clear')
 
@@ -15,6 +15,8 @@ class Jango(object):
             print "Some Error occured while creating config file."
 
    def run(self):
+      if not internet.connection():
+         print "Internet connection not working fine."
       try:
          Config.read(jangopath.CONFIG_PATH)
       except:

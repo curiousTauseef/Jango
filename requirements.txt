@@ -1,3 +1,6 @@
 beautifulsoup4==4.3.1
 requests==2.0.1
+mewe==1.0.2
+pwapi==0.3.8
+wikipedia==1.4.0
 

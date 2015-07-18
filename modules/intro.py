@@ -1,0 +1,7 @@
+print "I can : "
+print "Tell time, date and day."
+print "Find meanings of words."
+print "Entertain you by telling jokes."
+print "Tell current weather."
+print "Make notes."
+print "Search information on wikipedia."

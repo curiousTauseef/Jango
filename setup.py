@@ -16,7 +16,7 @@ config = {
     'test_suite': 'tests',
     'url': 'https://github.com/rahulxxarora/JANGO',
     'install_requires': [
-        'BeautifulSoup4>=4.3.1', 'requests'
+        'BeautifulSoup4>=4.3.1', 'requests', 'pywapi', 'wikipedia==1.4.0'
     ],
     'packages': [
         'jango',

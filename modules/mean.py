@@ -11,7 +11,9 @@ for arg in sys.argv:
    if arg=='of':
       flag = 1
 
-ans = dic.get(query)
-
-for i in ans:
-   print i
+try:
+   ans = dic.get(query)
+   for i in ans:
+      print i
+except:
+   print "Something went wrong."
