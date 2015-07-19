@@ -11,8 +11,11 @@ pip install jango
 Usage
 ==============
 
+NOTE: ALWAYS USE JANGO IN SUDO MODE, ELSE IT MIGHT NOT WORK PROPERLY.
+
 To start using jango, open python interpreter and type
-    
+   
+    sudo python
     from jango import jango
 
 If this is the first time you are using it, then it will first configure your account. Enter the details correctly, else you won't get the correct results. 
