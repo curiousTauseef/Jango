@@ -7,7 +7,7 @@ except ImportError:
 
 config = {
     'name': 'jango',
-    'version': '0.0.1',
+    'version': '0.0.7',
     'description': 'Command line based personal assistant for linux based systems.',
     'long_description': open('README.md').read(),
     'author': 'Rahul Arora',

@@ -1,6 +1,6 @@
 import ConfigParser
 import os
-from modules import jangopath, start, conversation, brain, internet
+import jangopath, start, conversation, brain, internet
 
 os.system('clear')
 
@@ -34,5 +34,6 @@ class Jango(object):
 print "*******************************************************"
 print "*             JANGO - PERSONAL ASSISTANT              *"
 print "*******************************************************"
+
 app = Jango()
 app.run()

@@ -11,11 +11,11 @@ pip install jango
 Usage
 ==============
 
-To start using jango, open python interpreter ans type
+To start using jango, open python interpreter and type
     
     from jango import jango
 
-I this is the first time you are using it, then it will first configur your account. Enter the details correctly, else you won't get the correct results. 
+If this is the first time you are using it, then it will first configure your account. Enter the details correctly, else you won't get the correct results. 
 
 Lets start from the very basic one.
 
