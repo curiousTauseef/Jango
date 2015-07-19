@@ -1,22 +1,13 @@
-import requests
-from bs4 import BeautifulSoup
-import random
+import urllib
+import json
 
-url = "http://www.ajokeaday.com/ChisteAlAzar.asp?"
-
-def strip_non_ascii(string):
-    ''' Returns the string without non ASCII characters'''
-    stripped = (c for c in string if 0 < ord(c) < 127)
-    return ''.join(stripped)
+url = "http://tambal.azurewebsites.net/joke/random"
 
 def handle():
-   page = requests.get(url)
-   src = page.text
-   ob = BeautifulSoup(src, 'lxml')
-   for info in ob.findAll('div',{'class':'chiste'}):
-         joke = info.text.strip()
-         joke = strip_non_ascii(joke)
-         print joke
-         return
+   try:
+      data = json.loads(urllib.urlopen(url).read())
+      print data['joke']
+   except:
+      print "Something went wrong."
 
 handle()
