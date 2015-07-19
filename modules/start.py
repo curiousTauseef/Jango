@@ -18,5 +18,4 @@ def add_name():
    Config.set('Location','name',loc)
    Config.write(cfgfile)
    cfgfile.close()
-   print "\n"
 

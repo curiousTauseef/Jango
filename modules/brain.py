@@ -2,8 +2,8 @@ import re
 import os
 import jangopath
 
-WORDS = {1:"USEFUL", 2:"DATE", 3:"TIME", 4:"DAY", 5:"JOKE", 6:"MEANING", 7:"WEATHER", 8:"NOTE", 9:"SEARCH", 10:"SOLVE", 11:"MAIL"}
-MODULES = {1:"/intro.py", 2:"/date.py", 3:"/time.py", 4:"/day.py", 5:"/joke.py", 6:"/mean.py", 7:"/weather.py", 8:"/note.py", 9:"/search.py", 10:"/solve.py", 11:"/mail.py"}
+WORDS = {1:"USEFUL", 2:"JOKE", 3:"MEANING", 4:"WEATHER", 5:"NOTE", 6:"SEARCH", 7:"SOLVE", 8:"MAIL", 9:"DATE", 10:"TIME", 11:"DAY"}
+MODULES = {1:"/intro.py", 2:"/joke.py", 3:"/mean.py", 4:"/weather.py", 5:"/note.py", 6:"/search.py", 7:"/solve.py", 8:"/mail.py", 9:"/date.py", 10:"/time.py", 11:"/day.py"}
 
 class Brain(object):
    def isValid(self, text, word):

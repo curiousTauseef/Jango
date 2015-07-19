@@ -8,15 +8,15 @@ except ImportError:
 config = {
     'name': 'jango',
     'version': '0.0.1',
-    'description': 'Command line personal assistant for ubuntu.',
+    'description': 'Command line based personal assistant for linux based systems.',
     'long_description': open('README.md').read(),
     'author': 'Rahul Arora',
     'author_email': 'coderahul94@gmail.com',
     'license': 'MIT',
     'test_suite': 'tests',
-    'url': 'https://github.com/rahulxxarora/JANGO',
+    'url': 'https://github.com/rahulxxarora/Jango',
     'install_requires': [
-        'BeautifulSoup4>=4.3.1', 'requests', 'pywapi', 'wikipedia==1.4.0'
+        'BeautifulSoup4>=4.3.1', 'requests', 'pywapi', 'wikipedia==1.4.0, mewe==1.0.2'
     ],
     'packages': [
         'jango',
