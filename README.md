@@ -13,7 +13,7 @@ Usage
 
 NOTE: ALWAYS USE JANGO IN SUDO MODE, ELSE IT MIGHT NOT WORK PROPERLY.
 
-To start using jango, open python interpreter and type
+To start using jango, open terminal and type
    
     sudo python
     from jango import jango
