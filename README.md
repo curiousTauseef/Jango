@@ -61,6 +61,10 @@ Read you inbox
     ->Jango, do I have any new email today?
     ->Show me my mailbox.
 
+Set timers
+--------------
+    ->Set timer please.
+
 Why not ask jango yourself?
 --------------
     ->Jango, how useful are you?
