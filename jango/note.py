@@ -25,10 +25,13 @@ def handle2():
       if not note:
          break
       else:
-         note = note.split("*")
-         if str(note[1]).strip()==str(datetime.date.today()):
-            print note[0]
-            flag = 1
+         try:
+            note = note.split("*")
+            if str(note[1]).strip()==str(datetime.date.today()):
+               print note[0]
+               flag = 1
+         except:
+            pass
    if flag==0:
       print "No notes for today."
 
