@@ -7,7 +7,7 @@ except ImportError:
 
 config = {
     'name': 'jango',
-    'version': '0.0.8',
+    'version': '0.1.7',
     'description': 'Command line based personal assistant for linux based systems.',
     'long_description': open('README.md').read(),
     'author': 'Rahul Arora',
@@ -16,7 +16,7 @@ config = {
     'test_suite': 'tests',
     'url': 'https://github.com/rahulxxarora/Jango',
     'install_requires': [
-        'BeautifulSoup4>=4.3.1', 'requests', 'pywapi', 'wikipedia==1.4.0', 'mewe==1.0.2'
+        'beautifulsoup4', 'requests', 'wikipedia', 'pywapi', 
     ],
     'packages': [
         'jango',

@@ -1,6 +1,5 @@
-beautifulsoup4==4.3.1
-requests==2.0.1
-mewe==1.0.2
-pwapi==0.3.8
-wikipedia==1.4.0
+beautifulsoup4
+requests
+wikipedia
+https://launchpad.net/python-weather-api/trunk/0.3.8/+download/pywapi-0.3.8.tar.gz
 

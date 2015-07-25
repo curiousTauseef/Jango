@@ -31,9 +31,9 @@ class Jango(object):
       conversation.handleForever()
                
 
-print "*******************************************************"
-print "*             JANGO - PERSONAL ASSISTANT              *"
-print "*******************************************************"
+print "\t    ******************************************************"
+print "\t    *             JANGO - PERSONAL ASSISTANT              *"
+print "\t    *******************************************************"
 
 app = Jango()
 app.run()

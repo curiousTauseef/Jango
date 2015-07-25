@@ -1,6 +1,7 @@
 import ConfigParser
 import jangopath
 import getpass
+import os
 
 def add_name():
    print "\nJANGO - CONFIGURATION\n"
@@ -16,6 +17,9 @@ def add_name():
    Config.add_section('Location')
    loc = raw_input("Enter your current location (city, country) : ")
    Config.set('Location','name',loc)
+   Config.add_section('Directory')
+   music = os.getenv("HOME") + "/Music"
+   Config.set('Directory','music',music)
    Config.write(cfgfile)
    cfgfile.close()
 
