@@ -8,16 +8,13 @@ Version
 
 python 2.7 supported for now.
 
-Installation
---------------
-
-    pip install jango
-
 Usage
 ==============
 
 To start using jango, open python interpreter and type
     
+    import sys
+    sys.path.append('./Jango')
     from jango import jango
 
 It this is the first time you are using it, then it will first configure your account. Enter the details correctly, else you won't get the correct results. 
