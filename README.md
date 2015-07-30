@@ -11,7 +11,7 @@ python 2.7 supported for now.
 Usage
 ==============
 
-To start using jango, open python interpreter and type
+To start using jango, Copy this whole directory in your home directory then open python interpreter and type
     
     import sys
     sys.path.append('./Jango')
