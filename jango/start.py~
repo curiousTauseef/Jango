@@ -6,12 +6,9 @@ import os
 def add_name():
    print "\nJANGO - CONFIGURATION\n"
    Config = ConfigParser.ConfigParser()
-   Config2 = ConfigParser.ConfigParser()
    cfgfile = open(jangopath.CONFIG_PATH, 'w')
-   cfgfile2 = open(jangopath.CONTACTS_PATH, 'a')
 
    Config.add_section('Person')
-   Config2.add_section('Person')
    name = raw_input("Enter your name : ")
    uname = raw_input("Enter your email : ")
    pswd = getpass.getpass("Enter your password : ")
@@ -30,7 +27,6 @@ def add_name():
    Config.set('Directory','music',music)
 
    Config.write(cfgfile)
-   Config2.write(cfgfile2)
    cfgfile.close()
-   cfgfile2.close()
+
 
