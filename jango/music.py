@@ -21,19 +21,26 @@ for arg in sys.argv:
    if arg.lower()=="a" or arg.lower()=="some":
       flag = 1 
 
-files = os.listdir(check)
-ans = files[random.randrange(len(files))]
-check = check + "/" + ans
-check = check.strip()
+try:
+   files = os.listdir(check)
 
-print "Playing " + ans
+   ans = files[random.randrange(len(files))]
+   check = check + "/" + ans
+   check = check.strip()
+   print "Playing " + ans
 
-f = open('.Jango_temp.txt','w')
-f.write(check)
-f.close()
+   f = open('.Jango_temp.txt','w')
+   f.write(check)
+   f.close()
 
-path = jangopath.MODULE_PATH + "/music_helper.py"
-os.system('python ' + path + " &")
+   path = jangopath.MODULE_PATH + "/music_helper.py"
+   os.system('python ' + path + " &")
+
+except:
+   print "No such directory exists"
+
+
+
 
 
       
