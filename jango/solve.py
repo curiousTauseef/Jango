@@ -2,6 +2,7 @@ import re
 import sys
 
 query = ""
+f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
 for arg in sys.argv:
    query = query + arg + " "  
 
@@ -9,6 +10,7 @@ def handle(query):
     expression = re.findall("\s([0-9\+\-/\*\(\)\.\s]+)", query)
     
     if not expression:
+        f.write("Something went wrong.")
         print "Something went wrong."
         return
 
@@ -16,8 +18,13 @@ def handle(query):
 
     try:
         print eval(expression)
+        ans = int(eval(expression))
+        f.write(str(ans))
     except SyntaxError:
+        f.write("Something went wrong.")
         print "Something went wrong."
         return
+    f.close()
 
 handle(query)
+

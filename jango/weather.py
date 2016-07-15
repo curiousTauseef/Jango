@@ -1,8 +1,10 @@
 import ConfigParser
-import pywapi
+import pyowm
 import jangopath
 
 Config = ConfigParser.ConfigParser()
+
+f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
 
 def handle():
    try:
@@ -12,21 +14,16 @@ def handle():
       return
 
    city = Config.get('Location', 'name') 
-   lookup = pywapi.get_location_ids(city)
 
-   for i in lookup:
-      loc_id = i
-      break
+   owm = pyowm.OWM('f47660233e14a180642092b3914a2cb1')
 
-   try:
-      weather_com_result = pywapi.get_weather_from_weather_com(loc_id)
-   except:
-      print "Something went wrong."
-      return
-
-   print weather_com_result['current_conditions']['text'] + " :",
-   print "Temperature " + weather_com_result['current_conditions']['temperature'] + " c",
-   print "but feels like " + weather_com_result['current_conditions']['feels_like'] + " c"
+   observation = owm.weather_at_place(city)
+   w = observation.get_weather()
+   f.write("Current Temperature is : " + str(int(w.get_temperature('celsius')['temp'])) + str(" Degree Celsius\n\n") )
+   f.write(" , Humidity " + str(w.get_humidity()) + "%")
+   print "Current Temperature is : " + str(w.get_temperature('celsius')['temp']) + str(" Degree Celsius")
+   print "Humidity " + str(w.get_humidity()) + "%"
+   f.close()
 
 handle()               
 

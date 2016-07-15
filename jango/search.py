@@ -4,6 +4,7 @@ import sys
 
 flag = 0
 query = ""
+f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
 
 for arg in sys.argv:
    if flag==1:
@@ -22,10 +23,12 @@ def handle():
       info =  wikipedia.summary(query, sentences=3)
    except wikipedia.exceptions.DisambiguationError:
       info = None
+      f.write("Try to be more specific.")
       print "Try to be more specific."
       flag = 1
    except wikipedia.exceptions.PageError:
       info = None
+      f.write("No result found!!")
       print "No result found!!"
       flag = 1
 
@@ -33,8 +36,10 @@ def handle():
       info = re.sub(r'\([^)]*\)',' ',info)
       info = strip_non_ascii(info)
       try:   
+         f.write(info)
          print info    
       except UnicodeEncodeError:
          pass
+   f.close()
 
 handle()

@@ -2,9 +2,11 @@ import os
 import sys
 import ConfigParser
 import jangopath
+import requests
 
 Config = ConfigParser.ConfigParser()
 Contact = ConfigParser.ConfigParser()
+f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
 
 try:
    Config.read(jangopath.CONFIG_PATH)
@@ -46,13 +48,14 @@ except:
    cfgfile.close()
 
 msg = msg.replace(" ", "+")
-
+#print "curl --get --include \'https://freesms8.p.mashape.com/index.php?msg=" + msg + "&phone=" + to + "&pwd=" + pwd + "&uid=" + uname + "\' -H \'X-Mashape-Key: Sr71TH5PRmmshuOGsE2LNaU3UtQ6p1B3609jsn72dtTvwRkAhb\' >/dev/null 2>&1"
 try:
-   os.system("curl --get --include \'https://freesms8.p.mashape.com/index.php?msg=" + msg + "&phone=" + to + "&pwd=" + pwd + "&uid=" + uname + "\' -H \'X-Mashape-Key: Sr71TH5PRmmshuOGsE2LNaU3UtQ6p1B3609jsn72dtTvwRkAhb\' >/dev/null 2>&1")
+   requests.get("http://www.smszone.in/sendsms.asp?page=SendSmsBulk&username=918010969391&password=43BF&number=" + to + "&message=" + msg.capitalize())
+   f.write("Message Sent")
 except:
    print "Something went wrong."
 
-
+f.close()
 
 
 

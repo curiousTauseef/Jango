@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jango</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+</head>
+
+<script>
+
+function speak(text, callback) {
+    text = text.replace(/<\/?[^>]+(>|$)/g, "");
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance();
+    u.text = text;
+    u.lang = 'en-US';
+ 
+    u.onend = function () {
+        listen();
+        if (callback) {
+            callback();
+        }
+    };
+ 
+    u.onerror = function (e) {
+        if (callback) {
+            callback(e);
+        }
+    };
+ 
+    speechSynthesis.speak(u);
+}
+
+var sayit = function ()
+{
+    var msg = new SpeechSynthesisUtterance();
+
+    msg.lang = 'en-US';
+
+    msg.onstart = function (event) {
+         console.log("started");
+    };
+    msg.onend = function(event) {
+        console.log('Finished in ' + event.elapsedTime + ' seconds.');
+    };
+    msg.onerror = function(event) {
+        console.log('Errored ' + event);
+    };
+    msg.onpause = function (event) {
+        console.log('paused ' + event);
+    };
+    msg.onboundary = function (event) {
+        console.log('onboundary ' + event);
+    };
+
+    return msg;
+}
+
+
+var speekResponse = function (text)
+{
+    speechSynthesis.cancel(); // if it errors, this clears out the error.
+
+    var sentences = text.split(".");
+    for (var i=0;i< sentences.length;i++)
+    {
+        var toSay = sayit();
+        toSay.text = sentences[i];
+        console.log(sentences[i]);
+        if(sentences[i]!="")
+            speechSynthesis.speak(toSay);
+    }
+    listen();
+}
+
+function listen() { 
+    console.log("Listening!");
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = true;
+ 
+    recognition.onresult = function (e) {
+        var textarea = document.getElementById('url-box');
+        for (var i = e.resultIndex; i < e.results.length; ++i) {
+            if (e.results[i].isFinal) {
+                    textarea.value += e.results[i][0].transcript;
+            }
+        }
+         
+        console.log(textarea.value);
+
+        if(textarea.value!="") { 
+            if(textarea.value.indexOf("Django")>=0) { 
+                console.log("Submitting!");
+                document.forms["myform"].submit();
+            }
+            else
+                textarea.value = "";
+        }
+    }
+
+    recognition.onend = function (e) {
+        console.log("End!");
+        var textarea = document.getElementById('url-box');
+        if(textarea.value=="") {
+            console.log("Started Again!");
+            recognition.start();
+        }
+    }
+ 
+    recognition.start();
+}
+
+</script>
+
+<body>
+<center>
+    <div class="container">
+      <h1>Jango</h1>
+      <form role="form" name="myform" id="textform" method='POST' action='/'>
+        <div class="form-group">
+          <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter Your Query" style="max-width: 300px;">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <br>
+      {{res}}
+      {{res2}}
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</center>
+</body>
+
+<script>
+    {% if not res and not res2%}
+        listen();
+    {% elif res2 %}
+        speak("{{res2|safe}}");
+    {% else %}
+        speekResponse("{{res|safe}}");
+    {% endif %}
+</script>
+
+</html>

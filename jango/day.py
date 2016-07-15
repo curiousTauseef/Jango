@@ -1,9 +1,8 @@
-import time
+# -*- coding: utf-8 -*-
 
-def handle():
-   localtime = time.asctime( time.localtime(time.time()) )
-   date = localtime.split()
-   print "Current day is : " + date[0]
-
-handle()
-
+import datetime
+now = datetime.datetime.now()
+f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f.write("Current day is : " + str(now.strftime("%A")))
+f.close()
+print now.strftime("%A")
