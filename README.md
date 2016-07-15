@@ -1,24 +1,20 @@
 Jango
 ==============
 
-A command line based personal assistant for linux based systems. It gets customized for you and helps you in your day to day tasks.
+Personal assistant for Linux based systems which responds to your speech/text inputs. It gets customized for you and helps you in your day to day tasks.
 
 Version
 --------------
 
 python 2.7 supported for now.
 
-Installation
---------------
-
-    pip install jango
 
 Usage
 ==============
 
 To start using jango, open python interpreter and type
     
-    from jango import jango
+Go to the folder and start interactive.py.
 
 It this is the first time you are using it, then it will first configure your account. Enter the details correctly, else you won't get the correct results. 
 
