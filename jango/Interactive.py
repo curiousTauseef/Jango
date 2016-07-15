@@ -4,6 +4,7 @@ from jinja2 import Markup
 from brain import Brain
 import note
 import re
+import jangopath
 
 Make_Notes = 0
 Internet_Check = 0
@@ -17,6 +18,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET','POST'])
 def start():
    global Make_Notes, internet_Check
+   file = open(jangopath.HOME_DIR + "/ans.txt", 'w+')
+   file.close()
    if request.method=='GET':
       res = ""
       return render_template('test.html',res=res)
@@ -31,7 +34,7 @@ def start():
          note.handle(query)
       else:
         brain.query(query)
-      f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','r')
+      f = open(jangopath.HOME_DIR + "/ans.txt",'r')
       res = ""
       line = ""
       while True:

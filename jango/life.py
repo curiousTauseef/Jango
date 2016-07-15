@@ -1,7 +1,8 @@
 import random
+import jangopath
 
 ans = random.randrange(100)
-f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f = open(jangopath.HOME_DIR + '/ans.txt','w')
 
 if ans%2==0:
    f.write("The answer to the ultimate question of life, the universe and everything is 42." )

@@ -1,5 +1,6 @@
+import jangopath
 
-f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f = open(jangopath.HOME_DIR + '/ans.txt','w')
 
 print "Hello, my name is Jango. I am the first command line based personal assistant."
 

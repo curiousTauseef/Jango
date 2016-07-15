@@ -2,8 +2,9 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 import re
+import jangopath
 
-f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f = open(jangopath.HOME_DIR + '/ans.txt','w')
 
 def handle(query):
     flag = 0

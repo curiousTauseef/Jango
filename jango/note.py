@@ -1,10 +1,11 @@
 import datetime
 import jangopath
 import sys
+import os
 
 
 def handle(text):
-   f2 = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+   f2 = open(jangopath.HOME_DIR + '/ans.txt','w+')
    #note = raw_input("What shall I note down? : ")
    note = text
    note = note + " * " + str(datetime.date.today()) + "\n"
@@ -20,7 +21,7 @@ def handle(text):
       return
 
 def handle2():
-   f2 = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+   f2 = open(jangopath.HOME_DIR + '/ans.txt','w+')
    try:
       f = open(jangopath.TEXT_PATH, 'r')
    except:

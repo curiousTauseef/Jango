@@ -14,7 +14,7 @@ Usage
 
 To start using jango, open python interpreter and type
     
-Go to the folder and start interactive.py.
+Go to the folder and start Interactive.py.
 
 It this is the first time you are using it, then it will first configure your account. Enter the details correctly, else you won't get the correct results. 
 
@@ -80,6 +80,7 @@ If you get the message saying "Something went wrong.". That means:
 - You did'nt configure your account correctly.
 - The command you gave to jango, might not be of the same type as described in docs.
 - Jango might not be able to fetch results correctly.
+- Some features might not work for you, change the code accordingly!!
 
 For any kind of bug please email me. 
 

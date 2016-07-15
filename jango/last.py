@@ -4,6 +4,8 @@ import textrazor
 import wolframalpha
 import re
 import sys
+import jangopath
+
 
 
 def strip_non_ascii(string):
@@ -18,7 +20,7 @@ query = ""
 for arg in sys.argv:
    query = query + arg + " "
 
-query = str(query.split("/Users/coderahul/Desktop/JANGO/jango/last.py")[1]).strip()
+query = str(query.split(jangopath.HOME_DIR + "/last.py")[1]).strip()
 
 wclient = wolframalpha.Client(app_id_wolframalpha)
 textrazor.api_key = app_id_textrazor
@@ -27,7 +29,7 @@ tclient = textrazor.TextRazor(extractors=["entities"])
 
 res = wclient.query(query)
 
-f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f = open(jangopath.HOME_DIR + '/ans.txt','w')
 
 for pod in res.pods:
     #For Facts 

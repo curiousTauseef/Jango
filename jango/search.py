@@ -1,10 +1,11 @@
 import re
 import wikipedia
 import sys
+import jangopath
 
 flag = 0
 query = ""
-f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f = open(jangopath.HOME_DIR + '/ans.txt','w')
 
 for arg in sys.argv:
    if flag==1:

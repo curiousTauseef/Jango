@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import datetime
+import jangopath
 
 now = datetime.datetime.now()
 
-f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f = open(jangopath.HOME_DIR + '/ans.txt','w')
 f.write("Current time is : " + str(now.hour) + ":" + str(now.minute) + ":" + str(now.second))
 f.close()
 

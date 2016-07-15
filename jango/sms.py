@@ -6,7 +6,7 @@ import requests
 
 Config = ConfigParser.ConfigParser()
 Contact = ConfigParser.ConfigParser()
-f = open('/Users/coderahul/Desktop/JANGO/jango/ans.txt','w')
+f = open(jangopath.HOME_DIR + '/ans.txt','w')
 
 try:
    Config.read(jangopath.CONFIG_PATH)
