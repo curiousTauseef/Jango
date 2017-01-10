@@ -1,6 +1,8 @@
 Jango
 ==============
 
+This Project is soon gonna be updated with a more stable and efficient version. https://github.com/rahulxxarora/Automata Please clone the repo before that.
+
 Personal assistant for Linux based systems which responds to your speech/text inputs. It gets customized for you and helps you in your day to day tasks.
 
 Version
